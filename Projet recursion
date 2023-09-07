@@ -1,0 +1,33 @@
+def is_palindrome(word):
+    # Get the length of the word
+    n = len(word)
+    
+    # Initialize two counters, one starting from the beginning, and the other from the end
+    start = 0
+    end = n - 1
+
+    # Continue comparing characters until the start counter is less than the end counter
+    while start < end:
+        # If characters at start and end positions are different, it's not a palindrome
+        if word[start] != word[end]:
+            return False
+        
+        # Move the counters towards each other
+        start += 1
+        end -= 1
+
+    # If the loop completes without finding any differences, it's a palindrome
+    return True
+
+# Example usage:
+word1 = "gag"
+word2 = "kayak"
+word3 = "php"
+word4 = "radar"
+word5 = "hello"
+
+print(f"{word1} is a palindrome: {is_palindrome(word1)}")
+print(f"{word2} is a palindrome: {is_palindrome(word2)}")
+print(f"{word3} is a palindrome: {is_palindrome(word3)}")
+print(f"{word4} is a palindrome: {is_palindrome(word4)}")
+print(f"{word5} is a palindrome: {is_palindrome(word5)}")
